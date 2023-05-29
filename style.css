@@ -1,0 +1,157 @@
+/*  Section: reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/*  Section: Globally Custom Props for type and color*/
+:root{
+  /* type */
+  --body-type: 400 1.1rem Merriweather, Serif;
+  --title-type: 400 1.25rem Mulish, Sans-Serif;
+
+  /* color */
+  --dark-backgroundColor:#113e5c;
+  --dark-textColor:#fffffff3;
+}
+
+/*  Section: Global Styles that can be inherited */
+body {
+  font: var(--body-type);
+  padding-top: 1rem;
+}
+
+.tr_darkBackground{
+  background-color: var(--dark-backgroundColor);
+  color: var(--dark-textColor);
+}
+
+/*SectionName: Timeline*/
+.tr_timelineH2{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  color:var(--bs-gray-400);
+  font-family: Mulish, sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width:768px){
+  .tr_timelineH2{
+    font-size: 1.25rem;
+  }  
+}
+
+@media screen and (max-width:576px){
+  .tr_timelineH2{
+    font-weight: 800;
+    font-size: 1.25rem;
+  }  
+}
+
+
+.tr_timelineItems{
+	max-width: 85ch;
+	margin:auto;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+.tr_timelineItems::before{
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	background-color: #ababab;
+	left: calc(50% - 1px);
+}
+
+.tr_timelineItem{
+	margin-bottom: 5rem;
+	width: 100%;
+	position: relative;
+}
+
+.tr_timelineItem:last-child{
+	margin-bottom: 0;
+}
+/* .tr_timelineItem:first-child{
+	margin-bottom: 0;
+} */
+
+.tr_timelineItem:nth-child(odd){
+  padding-right: calc(50% + 2rem);
+  text-align: right;
+}
+
+.tr_timelineItem:nth-child(even){
+  padding-left: calc(50% + 2rem);
+}
+
+.tr_timelineDot{
+	height: 16px;
+	width: 16px;
+	background-color: #ffff00;
+	position: absolute;
+	left: calc(50% - 8px);
+	border-radius: 50%;
+	top:10px;
+}
+
+.tr_timelineDate{
+	font-size: 18px;
+	color: #ffff79;
+	margin:6px 0 15px;
+}
+
+.tr_timelineP{
+  background-color: #03030336;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-top: 1.25rem;
+  font-family:'Merriweather', Serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5em;
+  color:#cbcaca
+}
+
+
+@media(max-width: 992px){
+	.tr_timelineItems::before{
+		left: 7px;
+	}
+	.tr_timelineItem:nth-child(odd){
+		padding-right: 0;
+		text-align: left;
+	}
+	.tr_timelineItem:nth-child(odd),
+	.tr_timelineItem:nth-child(even){
+		padding-left: 37px;
+	}
+	.tr_timelineDot{
+		left:0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
